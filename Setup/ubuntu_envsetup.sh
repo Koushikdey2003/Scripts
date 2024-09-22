@@ -1,5 +1,5 @@
 #!/bin/bash
-# For Personal usage (sarhakroy2002)
+# For Personal usage (Koushikdey2003)
 
 echo 'Lets start Setup'
 
@@ -10,8 +10,8 @@ sudo apt install -y python tmate ssh patchelf binutils zram-config git-lfs jq
 echo 'Essential stuff are installed successfully'
 
 # My Git Config
-git config --global user.email "sarthakroy2002@gmail.com"
-git config --global user.name "Sarthak Roy"
+git config --global user.email "kousickdey3@gmail.com"
+git config --global user.name "Koushik Dey"
 echo 'Your Git config is set successfully'
 
 # Install repo
