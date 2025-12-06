@@ -22,9 +22,9 @@ export CACHE
 export KBUILD_COMPILER_STRING
 ARCH=arm64
 export ARCH
-KBUILD_BUILD_HOST="neOliT"
+KBUILD_BUILD_HOST="MoonliT"
 export KBUILD_BUILD_HOST
-KBUILD_BUILD_USER="sarthakroy2002"
+KBUILD_BUILD_USER="Koushikdey2003"
 export KBUILD_BUILD_USER
 DEVICE="Realme C3/Narzo 10A (Realme Monet)"
 export DEVICE
@@ -75,7 +75,7 @@ error_sticker() {
 # Send Build Info
 sendinfo() {
     tg "
-• neOliT CI Build •
+• MoonliT CI Build •
 *Building on*: \`Github actions\`
 *Date*: \`${DATE}\`
 *Device*: \`${DEVICE} (${CODENAME})\`
@@ -111,7 +111,7 @@ compile() {
     if [ -d "out" ]; then
         rm -rf out && mkdir -p out
     fi
-
+    sed -i "s|-neOliT-PixelOS|-MoonliT-custom|g" arch/arm64/configs/RMX2020_defconfig
     make O=out ARCH="${ARCH}" "${DEFCONFIG}"
     make -j"${PROCS}" O=out \
         ARCH=$ARCH \
@@ -124,13 +124,13 @@ compile() {
         exit 1
     fi
 
-    git clone --depth=1 https://github.com/sarthakroy2002/AnyKernel3.git AnyKernel
+    git clone --depth=1 https://github.com/Koushikdey2003/AnyKernel3.git -b RMX2020 AnyKernel
     cp out/arch/arm64/boot/Image.gz-dtb AnyKernel
 }
 # Zipping
 zipping() {
     cd AnyKernel || exit 1
-    zip -r9 neOliT-Test-OSS-"${BRANCH}"-RUI2-KERNEL-"${CODENAME}"-"${DATE}".zip ./*
+    zip -r9 MoonliT-Test-OSS-"${BRANCH}"-RUI2-KERNEL-"${CODENAME}"-"${DATE}".zip ./*
     cd ..
 }
 
