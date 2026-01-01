@@ -10,6 +10,8 @@ deps() {
         PATH="${PWD}/clang/bin:${PATH}"
     fi
     sudo apt install -y ccache
+    echo "Init KernelSU-Next"
+    git submodule init && git submodule update
     echo "Done"
 }
 
